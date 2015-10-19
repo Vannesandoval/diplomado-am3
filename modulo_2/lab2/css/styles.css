@@ -1,0 +1,153 @@
+@charset "utf-8"; /* */
+/* CSS Document */
+/* filtrar mediante CSS*/
+* { /* es para todo */
+	-webkit-box-sizing: border-box; /* prefijo para los navegadores */
+	-moz-box-sizing: border-box; /* prefijo para los navegadores */
+	box-sizing: border; /* reseteando el relleno */
+}
+
+h1, h2, h3, h4, h5, h6{ /* a cada elelmento se le aplicara las propiedad o propiedades trabajadas*/
+	color: #333; /* el color de la letra*/
+	font-weight: bold; /* el estilo de la letra*/
+}
+
+.header{ /* selector de tipo clase */
+	background-color: #3a3f43; /* */
+	border-bottom: 14px; /* */
+	-webkit-box-shadow: 0 1px 3px 0 rgba(0,0,0,0.3); /* sombra sobre la caja: la posicion de la caja - las margenes de sombra para la caja - (el tono del color de la sombra y la opacidad o transparencia) */
+	-moz-box-shadow: 0 1px 3px 0 rgba(0,0,0,0.3); /* */
+	box-shadow: 0 1px 3px 0 rgba(0,0,0,0.3); /* */
+	padding: 22px 0; /* */
+}
+
+.logo{
+	background-color: #515558; /* */
+	-webkit-border-radius: 3px; /* redondeo a todas las esquinas */
+	-moz-border-radius: 3px; /* */
+	border-radius: 3px;
+	margin: 0 auto; /* */
+	text-align: center; /* */
+	width: 250px; /* */
+}
+
+.logo h1{ /* dentro de la caja logo, aplicar un h1 con estas caracteristicas */
+	color: #FFF; /* */
+	font-family: Arial, sans-serif; /* */
+	font-weight: normal; /* */
+	margin-bottom: 0; /* */
+}
+
+/* Start navigation */
+.nav-menu, .services > figure.columns{ /* el "mayor que" significa que esta dentro de esa etiqueta o caja y al primer elemento le aplica la caracteristica*/
+	display: none; /* */
+} 
+
+label{
+	color: #3A3F43; /* */
+	cursor: pointer; /* */
+	display: inline-block; /* */
+	padding: 5px; /* */
+}
+
+.nav-menu:checked + label{ /* esta chekeado y el "mas" cambia todo lo que hay en el*/
+	background-color: #3A3F43; /* */
+	-webkit-border-radius: 3px; /* */
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	color: #FFF;
+}
+
+#all:checked ~ .services .all, /* ME FILTRA LAS "FIGURAS" QUE CONTENGAN LA CLASE ALL, Y LA MUESTRA AL DARLE CLICK EN EL BOTON TODO*/
+#develop:checked ~ .services .develop, /* ME FILTRA LAS "FIGURAS" QUE CONTENGAN LA CLASE DEVELOP, Y LA MUESTRA AL DARLE CLICK EN EL BOTON DESARROLLO*/
+#languages:checked ~ .services .languages, /* ME FILTRA LAS "FIGURAS" QUE CONTENGAN LA CLASE LANGUAGES, Y LA MUESTRA AL DARLE CLICK EN EL BOTON LENGUAJES*/
+#skills:checked ~ .services .skills, /* ME FILTRA LAS "FIGURAS" QUE CONTENGAN LA CLASE SKILLS, Y LA MUESTRA AL DARLE CLICK EN EL BOTON HABILIDADES*/
+#test:checked ~ .services .test { /* filtro del css de clase id */
+	display: block;
+}
+
+/* end navigation */
+
+/* start section services */
+.services{
+	margin-top: 20px;
+}
+
+.services .four.columns{
+	margin-left: 0;
+	margin-right: 0;
+	width: 240px;
+}
+
+.services > figure{
+	position: relative;
+	overflow: hidden;
+}
+
+.services > figure img{
+	display: block;
+	max-width: 100%;
+}
+
+.services figcaption{
+	position: absolute;
+	height: 100%;
+	left: 0;
+	top: 0;
+	width: 100%;
+	background-color: rgba(58, 63,68, 0.8);
+
+	padding: 10%;
+
+	-webkit-transform: translateX(100%); /* translacion de derecha a izquierda */
+	-moz-transform: translateX(100%);
+	-o-transform: translateX(100%);
+	transform: translateX(100%);
+
+	-webkit-transition: all 350ms; /* Transicion toda la caja en 350ms */
+	-moz-transition: all 350ms;
+	-o-transition: all 350ms;
+	transition: all 350ms;
+}
+
+.services figcaption h4{
+	color: #fff;
+}
+
+.services figcaption p{
+	color: #fff;
+	font-size: 0.9em;
+}
+
+.services > figure:hover figcaption{ /* CON ESTO CAMBIO LA DISTANCIA EN EL QUE EL TEXTO APARECE*/
+	-webkit-transform: translateX(50%);
+	-moz-transform: translateX(50%);
+	-o-transform: translateX(50%);
+	transform: translateX(50%);
+}
+
+/* End services */
+
+.footer{
+	border-top: 1px solid #ccc;
+	margin-top: 10px;
+	padding: 28px 0;
+}
+
+@media screen and (max-width: 960px){
+
+}
+
+@media screen and (max-width: 720px){
+	.logo h1{
+		color: peru;
+		font-family: Verdana, Geneva, sans-serif;
+	}
+}
+
+@media screen and (max-width: 480px){
+	.logo h1{
+		color: yellow;
+		font-family: Arial, sans-serif;
+	}
+}
