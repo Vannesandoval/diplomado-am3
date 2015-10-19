@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="tech">
+<head>
+	<title>AngularJS First Application</title>
+	<meta charset="utf-8" />
+	<script type="text/javascript" src="../assets/angular.min.js"></script>
+</head>
+<body>
+	<div ng-controller="techController">
+	    <h1>Iteraciones - lab16</h1>
+		<h1>Lenguajes</h1>
+		<ul>
+			<li ng-repeat="tech in lenguages">{{ tech }}</li> <!-- muestra la que hay en la funcion simple_names -->
+		</ul>
+
+		<h1>Heroes</h1>
+		<ul>
+			<li ng-repeat="code in codes">{{ code.firstname }} </li> <!--itera entre lo que hay en la funcion heroes -->
+		</ul>
+	</div>
+	
+	<script type="text/javascript">
+	angular.module('tech', [])
+	       .controller('techController', function($scope){
+	       	$scope.lenguages = ["Java", "C++", "Assembler", "AngularJS", "JavaScript", "HTML & CSS"]; 
+            $scope.codes = [
+                {
+                    firstname: "html & css",
+                },
+                {
+                    firstname: "JavaScript",
+                },
+                {
+                    firstname: "AngularJS",
+                },
+                {
+                    firstname: "Assembler",
+   				},
+                {
+                    firstname: "C ++",
+                },
+                {
+                    firstname: "Java",
+                }
+            ];
+		   })
+		
+	</script>
+</body>
+</html>

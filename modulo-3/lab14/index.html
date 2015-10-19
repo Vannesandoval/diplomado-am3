@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="reveal-app"> 
+<head>
+	<title>AngularJS Third Application</title>
+	<meta charset="utf-8" />
+</head>
+<body>
+	<h1>Ejercicio Modulos - lab 14</h1>
+    <div ng-controller="lab14Controller">
+		<div ng-show="revealDiv">
+			<p>La plaga de lesiones que sufre el Real Madrid puede verse rebajada con la recuperación del brasileño Danilo, que según Rafa Benítez "está mejor" y podría volver contra el Levante, y Sergio Ramos, que deben decidir si se infiltra el hombro para jugar o espera unos días más para su vuelta. </p>
+		</div>
+		
+		<button ng-click="controlButton()" ng-show="revealButton">Ocultar texto</button>
+        <button ng-click="controlButton2()" ng-show="revealButton2">Mostrar texto</button>
+	</div>
+	<script type="text/javascript" src="../assets/angular.min.js"></script>
+
+	<script type="text/javascript">
+
+	angular.module('reveal-app', []) //se indica el nombre del modulo y [] son modulos externos
+		   .controller('lab14Controller', function($scope){
+		   		$scope.revealDiv = true;
+		   		$scope.revealButton = true;
+				$scope.revealButton2 = true;
+
+		   		$scope.controlButton = function(){
+		   			$scope.revealDiv = false;
+		   			$scope.revealButton = true;
+					$scope.revealButton2 = true;
+		   		};
+
+				$scope.controlButton2 = function(){
+		   			$scope.revealDiv = true;
+		   			$scope.revealButton = true;
+					$scope.revealButton2 = true;
+		   		};
+		   });
+	</script>
+
+
+</body>
+</html>

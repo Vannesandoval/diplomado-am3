@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<title>AngularJS Second Application</title>
+	<meta charset="utf-8" />
+</head>
+<body>
+	<h1> Primer Ejercicio - lab 12</h1>
+    <p> Ingresa tu hobbie: <input  type="text" ng-model="hobbie" /></p>
+	<p> {{ 'Mi hobbie es' | uppercase }} </p>
+    <p> <span ng-bind="hobbie"></span> </p>
+    <p> <strong> {{ 'Esta es otra opcion' | uppercase }} </strong> </p>
+<!--    <p> Ingresa tu hobbie: <input  type="text" ng-model="hobbie" /></p> // -->
+	<p> {{ 'Mi hobbie es' | uppercase }} <span> {{ hobbie }} </span> </p>
+    <p> <strong> {{ 'Esta es otra opcion más' | uppercase }} </strong> </p>
+    <p> {{ 'Ingresa tu hobbie:' | uppercase }} <input  type="text" ng-model="hobbie" /></p>
+	<p> {{ 'Mi hobbie es' | uppercase }} <span> {{ hobbie | uppercase }} </span> </p>
+    <p> {{ 145000 | currency }} </p>
+    <p> {{ 2015 }} </p>
+    <p> {{ 'fin' | uppercase }} </p>
+
+
+	<script type="text/javascript"src="../assets/angular.min.js"></script>
+</body>
+</html>
